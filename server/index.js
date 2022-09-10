@@ -7,22 +7,22 @@ const authRouter = require("./routes/auth");
 const postRouter = require("./routes/post");
 
 const connectDB = async () => {
-	try {
-		await mongoose.connect(
-			`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@learn.o0yf0dl.mongodb.net/?retryWrites=true&w=majority`,
-			{
-				useCreateIndex: true,
-				useNewUrlParser: true,
-				useUnifiedTopology: true,
-				useFindAndModify: false,
-			}
-		);
+  try {
+    await mongoose.connect(
+      `mongodb+srv://TienLD-VFA:Thuatien500@cluster0.hhaqfn3.mongodb.net/learn`,
+      {
+        useCreateIndex: true,
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false,
+      }
+    );
 
-		console.log("MongoDB connected");
-	} catch (error) {
-		console.log(error.message);
-		process.exit(1);
-	}
+    console.log("MongoDB connected");
+  } catch (error) {
+    console.log(error.message);
+    process.exit(1);
+  }
 };
 
 connectDB();
